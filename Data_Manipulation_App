@@ -142,6 +142,7 @@ class DataManipulationApp:
             # copy of data set in case of resetting
             self.original_df = self.df.copy()
             self.display_data()
+
     def display_data(self):
         self.tree.delete(*self.tree.get_children())
         columns = [str(col) for col in self.df.columns]
@@ -252,6 +253,7 @@ class DataManipulationApp:
         self.df = self.original_df.copy()
         self.display_data()
         self.add_new_condition()
+
     def add_new_condition(self):
         show_logical_operator = len(self.condition_frames) > 0
         condition_frame = ConditionFrame(self.conditional_ui_frame, list(self.df.columns), show_logical_operator)
